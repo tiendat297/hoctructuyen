@@ -1,0 +1,60 @@
+"id";"Admin_id_add";"name";"sort";"status";"description";"search";"courses_id";"video_file";"file";"chapter_id";"remember_token";"created_at";"updated_at"
+"1";"20170000";"LUYỆN NGÓN CƠ BẢN - BÀI HỌC RẤT QUAN TRỌNG";"1";"1";"Luyện ngón là bài học đầu tiên, quan trọng nhất khi bắt đầu học Guitar, với series GUITAR ĐỆM HÁT CƠ BẢN - Bài 1 Thuận muốn huớng dẫn cho bạn cách nhanh nhất để làm quen với đàn chính là luyện ngón. Đây là bài học quan trọng nhất, nền tảng nhất, cần thiết nhất với tất cả mọi người bắt đầu học Guitar. Chỉ số view cao cũng cho thấy tầm quan trọng của bài học này khi được rất nhiều những người học xem qua - luyện tập - đánh giá tích cực và thu lại nhiều kết quả tốt.
+";"THUẬN GUITAR, ĐỆM HÁT CƠ BẢN";"CL02";"<iframe src=""https://drive.google.com/file/d/1cqnISQyFKXXlh5eYUQdYgAMofr9n0IOM/preview"" width=""640"" height=""480""></iframe>";"A";"1";NULL;NULL;NULL
+"2";"20170000";"LUYỆN NGÓN PHẦN 2 RẤT QUAN TRỌNG";"1";"1";"Nhằm giúp các bạn luyện ngón tốt hơn, chuẩn bị một tiền đề thật tốt để có thể học qua bài số 3 quan trọng nhất: HỢP ÂM, Thuận tiếp tục huớng dẫn những bài luyện ngón nâng cấp hơn 1 xíu so với bài số 1 để bạn luyện tập nâng cao kỹ năng hơn.";NULL;"CL02";"<iframe src=""https://drive.google.com/file/d/1JbDlACAjbEQZ8_M5embLvoaYLtyy5TW5/preview"" width=""640"" height=""480""></iframe>";"A";"2";NULL;NULL;NULL
+"3";"20170000";"HƯỚNG DẪN CƠ BẢN NHẤT VỀHỢP ÂM";"2";"1";NULL;NULL;"CL02";NULL;NULL;"1";NULL;NULL;NULL
+"id";"name_chapter";"sort_chapter";"status";"description";"search";"course_id";"remember_token";"created_at";"updated_at"
+"1";"MỞ ĐẦU";"1";"1";"BẮT ĐẦU LÀM QUEN VỚI ĐÀN GUITAR";"MỞ ĐẦU";"CL02";NULL;NULL;NULL
+"2";"BẮT ĐẦU CHẠY NGÓN";"2";"1";"BÀI TẬP BẮT ĐẦU CHẠY NGÓN CHO NGÓN MỀM MẠI";"CHẠY NGÓN";"CL02";NULL;NULL;NULL
+"id";"users_id";"course_id";"learn_id";"content";"remember_token";"created_at";"updated_at"
+"id";"group_courses_id";"name";"sort";"status";"images";"free";"description";"after_courses";"search";"giang_vien_id";"price_root";"price_sale";"time_start_sale";"time_end_sale";"remember_token";"created_at";"updated_at"
+"CL01";"CL";"KHÓA GUITAR CLASSIC CƠ BẢN, NGƯỜI MỚI NÊN HỌC GÌ?";"1";"1";"Beginner-Guitar-Lessons-Jan-Mar-20.jpg";"0";"Khóa học Guitar Classic cơ bản sẽ giúp bạn làm quen với cây đàn guitar, luyện ngón, làm quen với các nốt nhạc tiếp đó là đệm hát cơ bản các bài hát nhạc nhẹ và giảng viên sẽ hướng dẫn bạn đánh solo các bài hát theo sheet nhạc để bạn làm quen dần về các thế tay và cách solo";NULL;"CLASSIC, GUITAR CLASSIC, CỔ ĐIỂN";"GV01";"1500000";"1300000";NULL;NULL;NULL;NULL;NULL
+"CL02";"CL";"GUITAR ĐỆM HÁT 30 NGÀY CÙNG HIỂN RÂU";"1";"1";"Hienrau.jpg";"0";"Vậy thì đây chính là khóa học DÀNH CHO BẠN: ""Guitar đệm hát 30 ngày cùng Hiển Râu"" 
+
+Khóa học guitar online ""Guitar đệm hát 30 ngày cùng Hiển Râu"" bao gồm những kiến thức cơ bản quan trọng, ngắn gọn và cần thiết nhất phục vụ cho mục đích đệm hát cơ bản.
+
+Giáo trình được xây dựng dựa trên kinh nghiệm giảng dạy và cập nhật theo sát giáo trình thực tế tại lớp đàn Hiển Râu để phù hợp với tất cả mọi người, kể cả những người không có năng khiếu âm nhạc.
+
+Học viên sẽ được hỗ trợ và giải đáp về mặt học thuật liên tục qua Fanpage Hiển Râu Guitar. 
+
+Sau khóa học này, học viên sẽ có nền tảng cơ bản vững chắc về guitar cũng như các cách chơi guitar thật hấp dẫn để tiếp tục lên những trình độ cao hơn với các khóa học tiếp theo của Hiển Râu.";"Kiến thức bài bản nhất và đầy đủ nhất cho đệm hát guitar cơ bản
+Kiến thức được phân cấp từ dễ đến khó giúp học viên dễ dàng theo dõi và thực hành ngay
+Nhanh chóng thực hành đệm đàn các bài cơ bản sau 2 tuần
+Giảm giá khi mua đàn và phụ kiện ở một số cửa hàng nhạc cụ
+Được tiếp cận một kho hàng trăm bài giảng đệm các bài bài hát miễn phí
+Có nền tảng tốt để tiếp tục học cao hơn hoặc bắt đầu chơi guitar thành thạo";"NHẠC DÂN TỘC, CLASSIC, GUITAR CLASSIC";"GV01";"1500000";"1300000";NULL;NULL;NULL;NULL;NULL
+"AU01";"AU";"GUITAR AUCOUSTIC ĐỆM HÁT CƠ BẢN
+";"1";"1";"100-Acoustic-Guitar-Course-101-Chords-Strumming-Picking.jpg";"0";"Khóa học Guitar Classic cơ bản sẽ giúp bạn làm quen với cây đàn guitar, luyện ngón, làm quen với các nốt nhạc tiếp đó là đệm hát cơ bản các bài hát nhạc nhẹ và giảng viên sẽ hướng dẫn bạn đánh solo các bài hát theo sheet nhạc để bạn làm quen dần về các thế tay và cách solo";"Kiến thức nhạc lý và các hợp âm guitar cơ bản nhất
+Nhanh chóng làm quen và thành thạo các điệu chơi guitar cơ bản một cách hiệu quả 
+Có cái nhìn tổng quát nhất về Guitar đệm hát ngày nay
+BIết cách tự tạo động lực, đòn bẩy tự học guitar trong tương lai sau khi hoàn thành khóa học
+Thành thạo đệm hát 20+ bản nhạc mới và phổ biến ngày nay
+Có tư duy tốt để có thể tự soạn nhạc và tự đệm nhạc với những bài hát mới hơn, hot hơn
+Được định hướng phong cách chơi guitar và định hướng tương lai của người chơi guitar ";"GUITAR AUCOUSTIC, NGƯỜI MỚI BẮT ĐẦU";"GV05";"1700000";"1500000";NULL;NULL;NULL;NULL;NULL
+"AU02";"AU";"KHÓA HỌC GUITAR AUCOUSTIC NÂNG CAO";"1";"1";"Best-Free-Beginner-Guitar-Courses-Online-683x1024.jpg";"0";"Khóa học Guitar Classic nâng cao sẽ giúp bạn làm chủ cây đàn guitar classic, từ việc học nhạc lý nâng cao rồi lên luyện ngón chuyên sâu, luyện cảm âm âm giai ca khúc, suy lu, tìmận hợp âm và cuối cùng là tự phân tích thế tay solo cho các bài hát dựa trên nền tảng cảm âm chứ không phải nhìn sheet nhạc nữa.";NULL;"GUITAR AUCOUSTIC NÂNG CAO";"GV03";"1700000";"1600000";NULL;NULL;NULL;NULL;NULL
+"BAS01";"BAS";"KHÓA HỌC GUITAR BASS CƠ BẢN CHO NGƯỜI MỚI TẬP";"1";"1";"2c3ace5bdaa5fae7a752030198f92c88.jpg";"0";"Tương tự như bộ môn guitar điện, học viên phải hoàn thành 3 lớp sơ cấp trước khi chuyển sang học guitar bass và học viên sẽ học guitar bass với hệ thống âm thanh, nhạc đệm dành cho bass. Chương trình cũng trang bị cho học viên các kiến thức về hòa âm rất cần cho tay chơi Bass chuyên nghiệp";NULL;"GUITAR BASS, GUITAR TRỐNG, ROCK";"GV04";"1900000";"1700000";NULL;NULL;NULL;NULL;NULL
+"BAS02";"BAS";"KHÓA GUITAR BASS NÂNG CAO CHO BAN NHẠC";"1";"1";"book1.jpg";"0";"Các bạn biết đấy, guitar bass và trống phối hợp nhuần nhuyễn với nhau. Học guitar bass bạn cần quan tâm cả về nhịp độ chính và nổi bật trọng âm để dòng chảy của bài hát là được duy trì ổn định; cần biết cách làm thế nào để tạo, giữ nhịp chắc, ở mức ổn định. Nếu người ta nói rằng để sản xuất âm nhạc cần có trái tim thì bass chính là trái tim của âm nhạc, Cảm nhận 1 cách thực tế là bạn sẽ cảm thấy nó đang đập uỳnh oàng bên trong cả bài hát.";NULL;"GUITAR BASS, TRỐNG, BAN NHẠC";"GV03";"2999000";"1799000";NULL;NULL;NULL;NULL;NULL
+"ELE01";"ELE";"KHÓA HỌC GUITAR ĐIỆN CƠ BẢN";"1";"1";"61ELCDQiNUL.jpg";"0";"Học GÌ Đây hiện đang có nhiều giáo viên dạy guitar điện tốt. Với các lớp học 1 kèm 1, giáo viên có thể đến nhà bạn, hoặc bạn có thể học tại nhà giáo viên.
+
+Học 1 kèm 1 là phương pháp học tập tốt nhất, đặc biệt là đối với bộ môn âm nhạc. Vì vậy, Học Gì Đây? mang đến cho bạn những lựa chọn về giáo viên giảng dạy bộ môn guitar điện một cách đầy đủ và tốt nhất.";NULL;"GUITAR ĐIỆN, ELECTRONIC";"GV03";"2200000";"1900000";NULL;NULL;NULL;NULL;NULL
+"id";"hoten";"images";"organize";"description";"remember_token";"created_at";"updated_at"
+"GV01";"HIỂN RÂU";NULL;NULL;NULL;NULL;NULL;NULL
+"GV02";"HAKETU";NULL;NULL;NULL;NULL;NULL;NULL
+"GV03";"HIẾU ORION";NULL;NULL;NULL;NULL;NULL;NULL
+"GV04";"BÙI TRẦN QUANG";NULL;NULL;NULL;NULL;NULL;NULL
+"GV05";"THUẬN GUITAR";NULL;NULL;NULL;NULL;NULL;NULL
+"id";"name";"sort";"status";"images";"description";"search";"remember_token";"created_at";"updated_at"
+"CL";"GUITAR CLASSIC";"1";"1";NULL;"Bạn yêu thích âm thanh của tiếng đàn guitar classic và muốn chinh phục nó để có thể tự mình thể hiện những bản nhạc hay nhất? Một yếu tố quan trọng nhất để chinh phục thành công nhạc cụ này chính là sự hướng dẫn, dìu dắt của những người có kinh nghiệm. Do đó, tham gia vào khóa học guitar cổ điển tại một trường âm nhạc sẽ là lựa chọn tốt nhất khi muốn theo đuổi và gắn bó với nhạc cụ này.";"GUITAR CLASSIC GUITAR Cổ điển";NULL;NULL;NULL
+"AU";"GUITAR AUCOUSTIC";"2";"1";NULL;"Các khóa học của tôi hoạt động với mục đích giới thiệu những điều cốt lõi trong việc học đàn guitar và thưởng thức nghệ thuật cổ điển_ một thể loại âm nhạc rất tuyêt vời và gần với chúng ta. Tôi muốn đem chút hiểu biết ít ỏi của mình để giúp các bạn muốn hoc dan guitar phần nào nhận ra được những cái hay, những điều bình dị luôn có trong âm nhạc, cuộc sống nói chung và cách chơi đàn guitar nói riêng. Tôi có nhiều học sinh được các giải guitar quốc tế, các học viên ưu tú phải kể đến như: Đỗ Đức, Phương Thảo, Quốc Huy, Trung Hiếu…";"GUITAR AUCOUSTIC GUITAR HIỆN ĐẠI";NULL;NULL;NULL
+"BAS";"GUITAR BASS";"3";"1";NULL;"Guitar bass không chỉ là một nhạc cụ thông thường. mà nó còn giữu vị trí khá quan trọng trong các nhóm nhạc. Với âm thanh nhẹ nhàng đôi chút thêm phần hơi chat nhưng chiếc đàn guitar bass gây khá nhiều thiện cảm không chỉ với người nghe. Mà tạo thêm điều tò mò cho những người học. Một khóa học đàn guitar bass sẽ là lựa chọn tốt nhất để bạn hiểu sâu hơn hòa âm chỉnh xác của cây đàn này.";"GUITAR BASS GUITAR TRỐNG";NULL;NULL;NULL
+"ELEC";"GUITAR ELECTRIC";"4";"1";NULL;"Thị trường nhạc điện tử EDM là một xu hướng mới trong giải trí âm nhạc hiên nay. Những bản nhạc cũ thuộc thể loại khác nhau đều được làm mới kết hợp với âm thanh của cây đàn guitar điện phối theo phong cách mới lạ. Vì thế, tìm kiếm các khóa học đàn guitar điện ngày càng đươc nhiều bạn trẻ lựa chọn. Thậm chí chinh phục cả sự tò mỏ của dân văn phòng. Âm nhạc và nghệ thuật luôn là hai yếu tố song hành đê tạo nên những con người nghệ sĩ đa tài. Nhưng những âm thanh nghe êm tai, thích thú sẽ không thể thiếu sự góp phần quan trọng của những cây đàn guitar điện.";"GUITAR ELECTRIC, GUITAR ĐIỆN";NULL;NULL;NULL
+"id";"migration";"batch"
+"id";"users_id";"course_id";"status";"cod";"sort";"remember_token";"created_at";"updated_at"
+"id";"users_id";"course_id";"learn_id";"time"
+"id";"name";"email";"phone";"password";"address";"avartar";"note";"remember_token";"created_at";"updated_at"
+"4";"Nam";"nam@gmail.com";"0967723426";"$2y$10$UdiY3NlJPj.RzRw7Uj88X.lc.88bHXrpSYTQNoKNgbi2AZQqUJQTS";"Ha Noi";NULL;NULL;NULL;"2020-11-03 03:55:35";"2020-11-03 03:55:35"
+"3";"nguyễn tiến đạt";"nguyentiendat29799@gmail.com";"0967723426";"$2y$10$QwCy1vTkDmwUjSuQ/zVmIeIp1ZZmMz/8A5.p8iCjUELqCoK6fTzdC";"Hà Tây";NULL;NULL;NULL;"2020-11-03 00:33:10";"2020-11-03 00:33:10"
+"5";"Hiểu";"hieu@gmail.com";"0967723426";"$2y$10$HDuJTaYUua4T0Pmqtiqx9eZmflqSdYcQwwIQAg6OTASQ3De3Iuet6";"Ha Noi";NULL;NULL;NULL;"2020-11-03 04:39:32";"2020-11-03 04:39:32"
+"6";"Lê Thị Hằng Béo";"hanglens0811@gmail.com";"0967723426";"$2y$10$l.8nP5H.Xt99mJFkBbHEq.77rAbABcRbKg4R/HTREWqMXNEjFNLgS";"Hoàng Mai-Hà Nội";NULL;NULL;NULL;"2020-11-03 10:53:33";"2020-11-03 10:53:33"
+"7";"Lê Thị Hằng Béo";"hangxinh@gmail.com";"0967723426";"$2y$10$DLo37.Wjj5KDFnoJjUlQh.GfsEv7A6QSRW1HasI8zHH9abmELzwjq";"Hoàng Mai-Hà Nội";NULL;NULL;NULL;"2020-11-04 07:53:01";"2020-11-04 07:53:01"
+"8";"Lê Thị Hằng Béo";"hangoc@gmail.com";"0967723426";"$2y$10$EF4SyYTKqeEe.Fi1jp3tee5.PyYH6cN2B5Xx303LadNgK6h29L.g6";"Hoàng Mai-Hà Nội";NULL;NULL;NULL;"2020-11-04 07:54:56";"2020-11-04 07:54:56"
