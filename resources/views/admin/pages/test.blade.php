@@ -34,8 +34,11 @@
 
                         <div class="row">
                             <!--  Line Chart -->
+
                             <div class="col-sm-12">
+
                                 <div class="card">
+                                    <h4 class="text-pink">Biểu đồ báo cáo doanh thu theo từng sản phẩm tháng {{ $data3 }}</h4>
                                     <div class="col-3">
                                         <form class="app-search" action="{{ 'chart_search' }}" method="POST">
                                             @csrf
@@ -47,12 +50,12 @@
                                                             @foreach ($data2 as $month )
 
 
-                                                            <option value="{{ $month -> thang }}">{{ $month -> thang }}</option>
+                                                            <option value="{{ $month -> thang }}">{{ $month -> thang }} - {{ $month -> nam }}</option>
                                                             @endforeach
                                                         </select>
                                                           </label>
 
-                                                        <button class="btn badge badge-success" type="submit">
+                                                        <button class="btn badge success" type="submit">
                                                             <i class="fas fa-search"></i>
                                                         </button>
 
@@ -82,10 +85,10 @@
               var data = google.visualization.arrayToDataTable(visitor);
 
               var materialOptions = {
-                width: 900,
+                width: 1300,
                 chart: {
-                  title: 'Biểu đồ báo cáo doanh số và số lượng bán ra theo từng khóa học',
-                  subtitle: 'The chart reports sales and sales volume by course'
+                  title: '',
+                  subtitle: ''
                 },
                 series: {
                   0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
@@ -94,13 +97,13 @@
                 axes: {
                   y: {
                     distance: {label: 'Doanh thu(triệu đồng)'}, // Left y-axis.
-                    brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
+                    brightness: {side: 'right', label: 'Số lượng khóa bán (Khóa)'} // Right y-axis.
                   }
                 }
               };
 
               var classicOptions = {
-                width: 900,
+                width: 1300,
                 series: {
                   0: {targetAxisIndex: 0},
                   1: {targetAxisIndex: 1}
@@ -156,7 +159,7 @@
                                                             @foreach ($data2 as $month )
 
 
-                                                            <option value="{{ $month -> thang }}">{{ $month -> thang }}</option>
+                                                            <option value="{{ $month -> thang }}">{{ $month -> thang }} - {{ $month -> nam }}</option>
                                                             @endforeach
                                                         </select>
                                             </label>

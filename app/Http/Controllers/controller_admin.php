@@ -223,12 +223,14 @@ class controller_admin extends Controller
 
         $giangvien = DB::table('giangvien')->get();
         $group_courses = DB::table('group_courses')->get();
+        $group = DB::table('courses') -> join('group_courses', 'courses.group_courses_id' , 'group_courses.id') -> where('courses.id', $id) -> select('group_courses_id', 'group_courses.name' ) -> get();
+
         $array = array(
             $array[0] = $giangvien,
             $array[1] = $group_courses,
 
         );
-        return view('admin\pages\editcourses', ['data' => $data], ['array' => $array]);
+        return view('admin\pages\editcourses', ['data' => $data, 'group' => $group], ['array' => $array]);
     }
     // view sửa khóa học
     public function them_courses()
@@ -532,45 +534,77 @@ class controller_admin extends Controller
     // thêm sửa xóa người dùng
     public function users()
     {
-        $user = DB::table('users')->paginate(15);
+        $user = DB::select('SELECT users.id, users.name, users.phone, SUM(price) as total_donhang, COUNT(student_course.id) as sl FROM users INNER JOIN student_course WHERE users.id = student_course.users_id GROUP BY users.id
+        , users.name, users.phone');
+
         return view('admin.pages.users', ['data' => $user]);
     }
     public function record()
     {
+        $date = getdate();
+        $year = $date['year'];
+        $nam = DB::select('SELECT   DISTINCT year(student_course.created_at) as nam FROM student_course');
         $month = DB::table('courses')->select('id', 'name')->get();
-        $record = DB::select('SELECT month(student_course.created_at) as thang, count(DISTINCT  student_course.users_id) as hv ,
+        $record = DB::select('SELECT month(student_course.created_at) as thang, year(student_course.created_at) as nam, count(DISTINCT  student_course.users_id) as hv ,
     count(student_course.id) as donhang, COUNT(student_course.courses_id) as sl,
-    SUM(student_course.price) as tong FROM student_course
-    GROUP BY month(student_course.created_at)');
+    SUM(student_course.price) as tong FROM student_course where year(student_course.created_at) = ?
+    GROUP BY month(student_course.created_at),year(student_course.created_at)',[$year]);
 
-        $record2  = DB::select('SELECT month(student_course.created_at) as thang,
+        $record2  = DB::select('SELECT month(student_course.created_at) as thang,year(student_course.created_at) as nam,
 
-    SUM(student_course.price) as sales FROM student_course
-    GROUP BY month(student_course.created_at)');
+    SUM(student_course.price) as sales FROM student_course where year(student_course.created_at) = ?
+    GROUP BY month(student_course.created_at),year(student_course.created_at)',[$year]);
         $result[] = ['Tháng', 'Doanh số(triệu đồng)'];
         foreach ($record2 as $key => $value) {
-            $result[++$key] = [$value->thang,  (int)$value->sales];
+            $result[++$key] = [$value->thang  ,  (int)$value->sales];
         }
 
 
-        return view('admin\pages\recordmoth', ['data' => $record, 'data2' => $month])->with('visitor', json_encode($result));
+        return view('admin\pages\recordmoth', ['data' => $record, 'data2' => $month, 'data3' => $nam])->with('visitor', json_encode($result));
     }
+    // tìm kiếm theo năm
+     public function chart_year(Request $request){
+         $nam2 = $request -> nam;
+         $date = getdate();
+        $year = $date['year'];
+        $nam = DB::select('SELECT   DISTINCT year(student_course.created_at) as nam FROM student_course');
+        $month = DB::table('courses')->select('id', 'name')->get();
+        $record = DB::select('SELECT month(student_course.created_at) as thang, year(student_course.created_at) as nam, count(DISTINCT  student_course.users_id) as hv ,
+    count(student_course.id) as donhang, COUNT(student_course.courses_id) as sl,
+    SUM(student_course.price) as tong FROM student_course where year(student_course.created_at) = ?
+    GROUP BY month(student_course.created_at),year(student_course.created_at)',[$nam2]);
+
+        $record2  = DB::select('SELECT month(student_course.created_at) as thang,year(student_course.created_at) as nam,
+
+    SUM(student_course.price) as sales FROM student_course where year(student_course.created_at) = ?
+    GROUP BY month(student_course.created_at),year(student_course.created_at)',[$nam2]);
+        $result[] = ['Tháng', 'Doanh số(triệu đồng)'];
+        foreach ($record2 as $key => $value) {
+            $result[++$key] = [$value->thang  ,  (int)$value->sales];
+        }
+
+
+        return view('admin\pages\recordmoth', ['data' => $record, 'data2' => $month, 'data3' => $nam])->with('visitor', json_encode($result));
+     }
+
     public function record_course()
-    {
-        $month = DB::select('SELECT DISTINCT month(created_at) as thang FROM student_course');
+    {    $date = getdate();
+        $year = $date['year'];
+        $thang = $date['mon'];
+        $month = DB::select('SELECT DISTINCT month(created_at)  as thang , year(student_course.created_at) as nam FROM student_course');
         $record = DB::select('SELECT courses_id, courses_name,COUNT(DISTINCT users_id) as hocvien,
-     COUNT(courses_id) as sl_ban, SUM(price) as tong FROM student_course GROUP BY courses_name, courses_id');
+     COUNT(courses_id) as sl_ban, SUM(price) as tong FROM  student_course where year(student_course.created_at) = ? GROUP BY courses_name, courses_id',[$year]);
 
 
         $record2 = DB::select('SELECT  courses_name, COUNT(courses_id) as sl_ban,
-      SUM(price) as sale FROM student_course GROUP BY courses_name order by sale DEsc ');
+      SUM(price) as sale FROM student_course where year(student_course.created_at) = ? GROUP BY courses_name order by sale DEsc ',[$year]);
         $result[] = ['courses_name', 'Doanh số(triệu đồng)', 'Số lượng bán'];
         foreach ($record2 as $key => $value) {
             $result[++$key] = [$value->courses_name,  (int)$value->sale, (int)$value->sl_ban];
         }
 
 
-        return view('admin\pages\test', ['data' => $record, 'data2' => $month])->with('visitor', json_encode($result));;
+        return view('admin\pages\test', ['data' => $record, 'data2' => $month, 'data3' => $thang ])->with('visitor', json_encode($result));;
     }
     // live search
     public function search(Request $request)
@@ -580,7 +614,6 @@ class controller_admin extends Controller
             $output = '';
             $st_courses2 = DB::table('student_course')
                 ->join('users', 'users.id', '=', 'student_course.users_id')
-
                 ->where('courses_name', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('name', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('courses_id', $request->search)
@@ -671,5 +704,9 @@ class controller_admin extends Controller
         DB::table('banner')->where('id', '=', $id)->delete();
         session()->flash('banner', 'Đã xóa banner thành công');
         return back();
+    }
+    // tạo chương trình khuyến mãi
+    public function khuyenmai(){
+        return view('admin\pages\khuyenmai');
     }
 }

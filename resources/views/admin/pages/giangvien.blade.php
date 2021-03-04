@@ -183,7 +183,7 @@
                         </div>
                         <!-- end card -->
                     </div>
-                </div>
+        </div>
                 <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->

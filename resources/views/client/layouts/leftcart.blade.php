@@ -22,7 +22,7 @@
 
             </li>
             <li><a href="{{ 'mycourses' }}">KHÓA HỌC CỦA TÔI</a></li>
-            <li ><a><i class="fa fa-briefcase"></i>LỊCH SỬ HỌC TẬP </a>
+            <li ><a href="{{ 'history' }}">LỊCH SỬ HỌC TẬP </a>
 
             </li>
             <li class="subMenu"><a>THÔNG BÁO</a>

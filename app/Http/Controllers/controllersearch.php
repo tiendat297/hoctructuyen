@@ -209,10 +209,12 @@ class controllersearch extends Controller
 
     public function chart_search(Request $request)
     {
-        $month = DB::select('SELECT DISTINCT month(created_at) as thang FROM student_course');
+        $date = getdate();
+        $year = $date['year'];
 
+        $month = DB::select('SELECT DISTINCT month(created_at)  as thang , year(student_course.created_at) as nam FROM student_course');
         $record = DB::select('SELECT courses_id, courses_name,COUNT(DISTINCT users_id) as hocvien,
-         COUNT(courses_id) as sl_ban, SUM(price) as tong FROM student_course GROUP BY courses_name, courses_id');
+     COUNT(courses_id) as sl_ban, SUM(price) as tong FROM  student_course where   month(student_course.created_at) = ? GROUP BY courses_name, courses_id',[ $request->loc]);
 
 
         $record2 = DB::table('student_course')
@@ -226,7 +228,7 @@ class controllersearch extends Controller
         foreach ($record2 as $key => $value) {
             $result[++$key] = [$value->courses_name,  (int)$value->sale, (int)$value->sl_ban];
         }
-        return view('admin\pages\test', ['data' => $record, 'data2' => $month])->with('visitor', json_encode($result));;
+        return view('admin\pages\test', ['data' => $record, 'data2' => $month, 'data3' => $request -> loc ])->with('visitor', json_encode($result));;
     }
     public function baihoc_search(Request $request)
     {

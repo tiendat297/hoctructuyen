@@ -55,8 +55,8 @@ Route::get('profile','controller_client@profile');
 Route::post('update_profile','controller_client@update_profile');
 // đổi pass word
 Route::post('update_password','controller_client@update_password');
-
-
+// lịch sử học tập
+Route::get('history','controller_client@history');
 
 // ----------------------Admin--------------------------------------
 // Chi tiết từng trang
@@ -133,6 +133,7 @@ Route::post('tim_khoahoc','controllersearch@tim_khoahoc');
 Route::post('tim_giangvien','controllersearch@tim_giangvien');
 // Lọc tháng biểu đồ doanh thu theo khóa học
 Route::post('chart_search','controllersearch@chart_search');
+Route::post('chart_year', 'controller_admin@chart_year');
 // banner
 Route::get('banner','controller_admin@banner');
 Route::post('insert_banner','controller_admin@insert_banner');
@@ -140,3 +141,5 @@ Route::get('xoa_banner/{id}','controller_admin@xoa_banner');
 // xuất ra file êxcel
 Route::post('excel_month','controller_admin@excel_month');
 Route::post('excel_courses','controller_admin@excel_courses');
+// tạo chương trình khuyến mãi
+Route::get('khuyenmai', 'controller_admin@khuyenmai');

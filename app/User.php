@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {   protected $table = 'users';
     use Notifiable;
 
@@ -39,4 +39,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

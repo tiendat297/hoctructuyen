@@ -20,54 +20,54 @@
         <strong>Well done!</strong> {{ session('thongbao') }}
       </div>
                 @endif
-                @if (session('thongbao_erro'))
-    <div class="alert alert-error">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Well done!</strong> {{ session('thongbao_erro') }}
-      </div>
-                @endif
 
 
-                <div class="span9">
-                    <table class="table table-bordered">
+                <div class="span8">
+                    <table class="table table-striped">
                     <thead>
                       <tr>
-
+                        <th>#</th>
+                        <th>Ngày</th>
+                        <th>Bài học</th>
                         <th>Khóa học</th>
-                        <th>Hoàn thành bài giảng</th>
-                        <th>Danh mục khóa học</th>
-
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $courses)
+                        <?php $i = 1; ?>
+                        @foreach ($data as $history)
 
 
                       <tr>
-
-                        <td><div class="thumbnail">
-                            <a href="{{ url('learning',['id'=>$courses ->courses_id]) }}" ><img style="width:240px; height:150px;" src="assets\admin\images\courses\{{ $courses -> images }}" alt=""/></a>
-                            <div class="caption">
-                              <h5>{{ $courses -> name }}</h5>
-
-
-                            </div>
-                          </div>
-                        </td>
-                        <td>0 bài học</td>
-                        <td>Guitar cơ bản</td>
+                        <td>{{ $i }}</td>
+                        <td>{{ $history -> created_at }}</td>
+                        <td>{{ $history -> name_baihoc }}</td>
+                        <td ><a href="{{ url('learning',['id'=>$history ->id]) }}" id = "courses">{{ $history -> name }} </a></td>
 
                       </tr>
+                      <?php $i++ ;?>
                       @endforeach
 
                     </tbody>
+
                   </table>
-                    </div>
+                </div>
+                <div class="pagination modal-1 span9">
+
+                    <li>{!! $data -> render() !!}</li>
+
+
+                </div>
 		</div>
     </div>
 
 
 </div>
+<style type="text/css">
+    #courses {
+
+          color:#0097e6;
+        }
+    </style>
 
 <!-- Footer ================================================================== -->
 	@include('client.layouts.footer')

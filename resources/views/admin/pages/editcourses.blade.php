@@ -101,7 +101,7 @@
                             <div class="card-body">
                                 <div class="form-group row">
 
-                                    <label  for="example-date">Trạng thái</label>
+                                    <label  for="example-date">Trạng thái khóa học</label>
                                     <select class="form-control col-md-9" name="status">
                                         <option value="{{ $courses -> status }}">@if($courses -> status == 1)
                                             {{ "Hiện" }}
@@ -166,7 +166,11 @@
                                     <div class="form-group row">
                                         <label for="example-date" class="text-danger">Thuộc nhóm khóa học</label>
                                         <select class="form-control col-lg-10" name="group_courses_id">
-                                            <option value=""></option>
+                                            @foreach ($group as $nhom)
+
+
+                                            <option value="{{ $nhom -> group_courses_id }}"> {{ $nhom -> name }}</option>
+                                            @endforeach
                                             @foreach ($array[1] as $gv )
 
 

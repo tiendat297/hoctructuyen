@@ -238,13 +238,15 @@ class controller_client extends Controller
         $cod = $request->cod;
         $student_id = (Auth::user()->id);
         $name = student_courses::find($cod);
-        $result = DB::table('student_course')->where('cod', $cod)->first();
-        if ($result) {
+        $result = DB::table('student_course')->where('cod', $cod) -> where('users_id',Auth::user()->id )->first();
+
+
+        if ($result ) {
             DB::table('student_course')->where('cod', $cod)->where('users_id', $student_id)->update(['status' => 2]);
             session()->flash('thongbao', 'Bạn đã kích hoạt khóa học thành công');
             return redirect('mycourses');
         } else {
-            session()->flash('thongbao', 'Bạn đã nhập sai mã kích hoạt hoặc chưa mua khóa học ');
+            session()->flash('thongbao_erro', 'Bạn đã nhập sai mã kích hoạt hoặc chưa mua khóa học ');
             return redirect('mycourses');
         }
     }
@@ -258,8 +260,7 @@ class controller_client extends Controller
         $query  = DB::select('SELECT courses.name,course_id, COUNT(DISTINCT student_learn.learn_id) as dahoc, courses.images FROM student_course INNER JOIN student_learn INNER JOIN courses  WHERE student_course.courses_id = courses.id AND
         student_course.users_id = student_learn.users_id AND  student_course.STATUS = 2 and student_learn.users_id = ? GROUP BY courses.name,course_id,courses.images', [$student_id]);
 
-
-        return view('client\pages\mycourses', ['data' => $query]);
+        return view('client\pages\mycourses', ['data' => $data]);
     }
     // đổ dữ liệu ra phần học và lưu quá trình học
     public function hoc($id)
@@ -374,5 +375,16 @@ class controller_client extends Controller
         DB::table('users')->where('id', '=', Auth::user()->id)->update(['password' => $newpass]);
         session()->flash('profile', 'Cập nhật thông tin thành công');
         return back();
+    }
+    public function history(){
+        $history = DB::select('SELECT student_learn.created_at , baihoc.name as name_baihoc, courses.name FROM student_learn INNER JOIN baihoc INNER JOIN courses WHERE student_learn.learn_id = baihoc.id AND baihoc.courses_id = courses.id AND users_id = ?',[Auth::user()->id]) ;
+        $history2 = DB::table('student_learn')
+        -> join('baihoc','student_learn.learn_id', 'baihoc.id')
+        -> join('courses','baihoc.courses_id','courses.id')
+        -> select('student_learn.created_at','baihoc.name as name_baihoc','courses.name', 'courses.id' )
+        -> where('users_id',Auth::user()->id )
+         -> orderByDesc('student_learn.created_at') -> paginate(15);
+
+        return view('client\pages\history',['data' => $history2]);
     }
 }

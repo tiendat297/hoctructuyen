@@ -21,6 +21,36 @@
                             <!--  Line Chart -->
                             <div class="col-sm-12">
                                 <div class="card">
+
+                                    <h4 class="text-pink">Biểu đồ báo cáo doanh thu theo tháng năm @foreach ($data as $nam)
+                                        {{ $nam -> nam }}
+                                    @endforeach</h4>
+
+                                    <div class="col-3">
+                                        <form class="app-search" action="{{ 'chart_year' }}" method="POST">
+                                            @csrf
+                                            <div class="app-search-box">
+                                                <div class="input-group">
+                                                    <label>Lọc theo năm
+                                                        <select  name="nam"   aria-controls="datatable" class="custom-select custom-select-sm form-control form-control-sm loc">
+                                                            <option value="">Năm</option>
+                                                            @foreach ($data3 as $year )
+
+
+                                                            <option value="{{ $year -> nam }}"> {{ $year -> nam }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                          </label>
+
+                                                        <button class="btn badge success" type="submit">
+                                                            <i class="fas fa-search"></i>
+                                                        </button>
+
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                     <div id="top_x_div" style="width: 800px; height: 500px;">
                                         <script type="text/javascript">
                                             var visitor = <?php echo $visitor; ?>;
@@ -35,8 +65,8 @@
                                                 width: 800,
                                                 legend: { position: 'ccccc' },
                                                 chart: {
-                                                  title: 'Biểu đố thống kê doanh số theo tháng',
-                                                  subtitle: 'The chart of sales statistics by month' },
+                                                  title: '',
+                                                  subtitle: '' },
                                                 axes: {
                                                   x: {
                                                     0: { side: 'top', label: 'Tháng'} // Top x-axis.
@@ -111,7 +141,7 @@
 
                                                     <tr>
                                                         <td>{{ $i }}</td>
-                                                        <td>{{ $record -> thang  }} - 2020 </td>
+                                                        <td>{{ $record -> thang  }} - {{ $record -> nam }} </td>
                                                         <td>{{ $record -> donhang  }}</td>
                                                         <td>{{ $record -> hv }}</td>
                                                         <td>{{ $record -> sl }}</td>

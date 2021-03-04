@@ -79,7 +79,7 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="charts-morris.html">Tạo voucher</a></li>
+                        <li><a href="{{ 'khuyenmai' }}">Tạo voucher</a></li>
 
                     </ul>
                 </li>

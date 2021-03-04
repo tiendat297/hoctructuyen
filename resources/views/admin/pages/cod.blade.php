@@ -51,7 +51,7 @@
 
                                         <h4 class="header-title mb-4">SỐ LƯỢNG COD HIỆN TẠI</h4>
 
-                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-warning" data-toggle="modal" data-target="#cod" > <i class="ion ion-md-add"></i> THÊM MỚI </button>
+
 
 
                                         <div class="table-responsive giangvien" id="table_cod">

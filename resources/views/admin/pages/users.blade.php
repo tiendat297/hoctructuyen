@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="card-body">
 
-                                        <h4 class="header-title mb-4">DANH SÁCH KHÓA HỌC</h4>
+                                        <h4 class="header-title mb-4">DANH SÁCH HỌC VIÊN</h4>
                                         @if (session('admin_thongbao'))
                                         <div class="alert alert-icon alert-success alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -58,18 +58,21 @@
                                             <strong>Well done!</strong>{{ session('admin_thongbao') }}
                                         </div>
                                                     @endif
-                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-warning" data-toggle="modal" data-target="#edit" > <i class="ion ion-md-add"></i> THÊM MỚI </button>
-                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-warning"> <i class="ion ion-md-people"></i> Danh sách giảng viên (Bản ghi) </button>
+
 
                                         <div class="table-responsive giangvien" id="table_giangvien">
+
                                             <table id="tech-companies-1 st_table" class="table table-striped mb-0">
                                                 <thead>
                                                     <tr>
+
                                                         <th>Stt</th>
-                                                        <th>Ảnh</th>
+
                                                         <th>Id</th>
                                                         <th>Tên học viên</th>
                                                         <th>Phone</th>
+                                                        <th>Tổng giá trị</th>
+                                                        <th>Số lượng mua</th>
                                                         <th>Thao tác</th>
                                                     </tr>
                                                 </thead>
@@ -84,10 +87,12 @@
 
 
                                                         <td>{{ $i }}</td>
-                                                        <td><img style="width:50px; height:50px;" src="assets\admin\images\users\avatar-1.jpg" alt=""/></td>
+
                                                         <td>{{ $users -> id }}</td>
                                                         <td>{{ $users -> name }}</td>
                                                         <td>{{ $users -> phone }}</td>
+                                                        <td>{{ $users -> total_donhang }}</td>
+                                                        <td>{{ $users -> sl }}</td>
                                                         <td> <button  data-id="" data-toggle="modal" class="badge badge-danger delete" data-target="#delete" id="sa-warning" ><i class="fas fa-archive"></i> Xóa</button>
                                                              <a    href=""  class="badge badge-success"  > <i class="ion ion-md-create"></i> Sửa</a></td>
 
@@ -105,7 +110,7 @@
                             </div>
                             <!-- end col -->
                         </div>
-  <span>{!! $data -> render() !!}</span>
+
 
                         <!-- end row -->
 
@@ -131,67 +136,7 @@
 
 
         <!-- END wrapper -->
-        <div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="col-lg-15">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title mb-4">Thông tin giảng viên</h4>
 
-                                <form class="parsley-examples" action="{{ "themgv" }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="userName">Tên giảng viên<span class="text-danger">*</span></label>
-                                        <input type="text" name="hoten" parsley-trigger="change" required="" placeholder="Enter user name" class="form-control" id="userName">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Số điện thoại<span class="text-danger">*</span></label>
-                                        <input type="text" name="phone" parsley-trigger="change" required="" placeholder="Địa chỉ" class="form-control" id="emailAddress">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Địa chỉ<span class="text-danger">*</span></label>
-                                        <input  type="text" placeholder="" required="" class="form-control" name="address">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="passWord2">Mô tả<span class="text-danger">*</span></label>
-                                        <div class="col-lg-14">
-                                            <textarea class="form-control ckeditor" rows="10" id="example-textarea" type="text" name="description" ></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-
-                                        <label class="" for="example-date">Trạng thái hoạt động</label>
-                                        <select class="" name="status">
-
-                                            <option value="1">Work</option>
-                                            <option value="0">Inactive</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="passWord2">Ảnh giảng viên<span class="text-danger">*</span></label>
-                                        <div class="col-lg-10">
-                                            <input type="file" name="images"  >
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                                    </div>
-
-                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary waves-effect waves-light ">Lưu thông tin</button>
-                                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-                </div>
                 <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->
